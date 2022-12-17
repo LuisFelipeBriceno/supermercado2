@@ -52,15 +52,17 @@ public class pantalla1 extends JFrame {
 	 */
 	public pantalla1() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 587, 394);
+		setBounds(100, 100, 607, 400);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(192, 192, 192));
+		contentPane.setBackground(new Color(10, 25, 49));
 		contentPane.setBorder(new BevelBorder(BevelBorder.LOWERED, SystemColor.textInactiveText, null, null, null));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JButton btnIniciarSesion = new JButton("Iniciar Sesion");
+		btnIniciarSesion.setForeground(new Color(239, 239, 239));
+		btnIniciarSesion.setBackground(new Color(24, 90, 219));
 		btnIniciarSesion.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -114,10 +116,12 @@ public class pantalla1 extends JFrame {
 			        }			    								
 			}
 		});
-		btnIniciarSesion.setBounds(181, 241, 238, 32);
+		btnIniciarSesion.setBounds(94, 240, 184, 32);
 		contentPane.add(btnIniciarSesion);
 		
 		JButton btnRegistrarse = new JButton("Registrarse");
+		btnRegistrarse.setForeground(new Color(239, 239, 239));
+		btnRegistrarse.setBackground(new Color(24, 90, 219));
 		btnRegistrarse.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -125,31 +129,48 @@ public class pantalla1 extends JFrame {
 				pantallaregistro.run();
 			}
 		});
-		btnRegistrarse.setBounds(181, 299, 238, 32);
+		btnRegistrarse.setBounds(304, 240, 184, 32);
 		contentPane.add(btnRegistrarse);
 		
-		JLabel lblTextoEnca = new JLabel("Bienvenido");
-		lblTextoEnca.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 30));
-		lblTextoEnca.setBounds(207, 43, 212, 71);
-		contentPane.add(lblTextoEnca);
-		
 		textFieldUsuario = new JTextField();
-		textFieldUsuario.setBounds(181, 152, 238, 20);
+		textFieldUsuario.setBackground(new Color(239, 239, 239));
+		textFieldUsuario.setBounds(175, 122, 238, 20);
 		contentPane.add(textFieldUsuario);
 		textFieldUsuario.setColumns(10);
 		
 		textFieldPass = new JTextField();
+		textFieldPass.setBackground(new Color(239, 239, 239));
 		textFieldPass.setColumns(10);
-		textFieldPass.setBounds(181, 207, 238, 20);
+		textFieldPass.setBounds(175, 178, 238, 20);
 		contentPane.add(textFieldPass);
 		
 		JLabel lblNewUsuario = new JLabel("Ingrese Usuario");
-		lblNewUsuario.setBounds(181, 138, 145, 14);
+		lblNewUsuario.setForeground(new Color(239, 239, 239));
+		lblNewUsuario.setBackground(new Color(239, 239, 239));
+		lblNewUsuario.setBounds(175, 96, 145, 14);
 		contentPane.add(lblNewUsuario);
 		
 		JLabel lblIngresePassword = new JLabel("Ingrese Password");
-		lblIngresePassword.setBounds(181, 183, 145, 14);
+		lblIngresePassword.setForeground(new Color(239, 239, 239));
+		lblIngresePassword.setBounds(175, 153, 145, 14);
 		contentPane.add(lblIngresePassword);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(24, 90, 219));
+		panel.setBounds(0, 0, 591, 47);
+		contentPane.add(panel);
+		
+		JLabel lblTextoEnca = new JLabel("Bienvenido");
+		lblTextoEnca.setForeground(new Color(239, 239, 239));
+		panel.add(lblTextoEnca);
+		lblTextoEnca.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 30));
+		
+		JTextArea txtrMadeByPollow = new JTextArea();
+		txtrMadeByPollow.setForeground(new Color(239, 239, 239));
+		txtrMadeByPollow.setBackground(new Color(10, 25, 49));
+		txtrMadeByPollow.setText("Made by Pollos Hermanos™");
+		txtrMadeByPollow.setBounds(223, 330, 164, 20);
+		contentPane.add(txtrMadeByPollow);
 		
 
 	
