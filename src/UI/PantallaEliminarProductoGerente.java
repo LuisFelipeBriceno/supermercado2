@@ -15,6 +15,7 @@ import javax.swing.border.EmptyBorder;
 
 import Negocio.ListadoProducto;
 import datos.Producto;
+import java.awt.Color;
 
 public class PantallaEliminarProductoGerente extends JFrame {
 
@@ -41,15 +42,11 @@ public class PantallaEliminarProductoGerente extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 587, 394);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(10, 25, 49));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("Seleccione Producto a eliminar");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 21));
-		lblNewLabel.setBounds(50, 11, 395, 85);
-		contentPane.add(lblNewLabel);
 		
 		ListadoProducto listadoproducto = new ListadoProducto();
 		 List<Producto> MostrarProductos = listadoproducto.MostrarProductos();
@@ -57,10 +54,12 @@ public class PantallaEliminarProductoGerente extends JFrame {
          for (Producto producto : MostrarProductos) {
              ProductosAmostrar[MostrarProductos.indexOf(producto)] = producto.getNombre();}
 		JComboBox comboBoxProducto = new JComboBox(ProductosAmostrar);
-		comboBoxProducto.setBounds(142, 107, 142, 22);
+		comboBoxProducto.setBounds(100, 146, 316, 22);
 		contentPane.add(comboBoxProducto);
 		
 		JButton btnNewButtonEliminar = new JButton("Eliminar");
+		btnNewButtonEliminar.setForeground(new Color(239, 239, 239));
+		btnNewButtonEliminar.setBackground(new Color(24, 90, 219));
 		btnNewButtonEliminar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
                
@@ -81,7 +80,28 @@ public class PantallaEliminarProductoGerente extends JFrame {
                 }
 			}
 		});
-		btnNewButtonEliminar.setBounds(166, 172, 89, 23);
+		btnNewButtonEliminar.setBounds(196, 222, 190, 38);
 		contentPane.add(btnNewButtonEliminar);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(24, 90, 219));
+		panel.setBounds(0, 0, 571, 47);
+		contentPane.add(panel);
+		
+		JLabel lblNewLabel = new JLabel("Eliminar producto");
+		lblNewLabel.setForeground(new Color(239, 239, 239));
+		panel.add(lblNewLabel);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 21));
+		
+		JLabel lblNewLabel_1 = new JLabel("- Seleccione el producto a eliminar: ");
+		lblNewLabel_1.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblNewLabel_1.setForeground(new Color(239, 239, 239));
+		lblNewLabel_1.setBounds(100, 119, 265, 16);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Made by Pollos Hermanos™");
+		lblNewLabel_2.setForeground(new Color(239, 239, 239));
+		lblNewLabel_2.setBounds(220, 327, 162, 16);
+		contentPane.add(lblNewLabel_2);
 	}
 }

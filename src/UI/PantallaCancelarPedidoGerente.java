@@ -18,6 +18,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.util.LinkedList;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class PantallaCancelarPedidoGerente extends JFrame {
 
@@ -44,22 +45,21 @@ public class PantallaCancelarPedidoGerente extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 587, 394);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(10, 25, 49));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewCancelTicket = new JLabel("Escriba Nro de Ticket");
-		lblNewCancelTicket.setFont(new Font("Tahoma", Font.BOLD, 25));
-		lblNewCancelTicket.setBounds(73, 27, 306, 98);
-		contentPane.add(lblNewCancelTicket);
-		
 		textField = new JTextField();
+		textField.setBackground(new Color(239, 239, 239));
 		textField.setColumns(10);
-		textField.setBounds(125, 124, 171, 37);
+		textField.setBounds(195, 135, 190, 37);
 		contentPane.add(textField);
 		
 		JButton btnNewButtonBorrar = new JButton("Cancelar Pedido");
+		btnNewButtonBorrar.setForeground(new Color(239, 239, 239));
+		btnNewButtonBorrar.setBackground(new Color(24, 90, 219));
 		btnNewButtonBorrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ListadoPedido listadopedido = new ListadoPedido();
@@ -84,8 +84,23 @@ public class PantallaCancelarPedidoGerente extends JFrame {
 				}
 			}
 		});
-		btnNewButtonBorrar.setBounds(145, 173, 131, 37);
+		btnNewButtonBorrar.setBounds(195, 206, 190, 37);
 		contentPane.add(btnNewButtonBorrar);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(24, 90, 219));
+		panel.setBounds(0, 0, 571, 49);
+		contentPane.add(panel);
+		
+		JLabel lblNewCancelTicket = new JLabel("Escriba Nro de Ticket");
+		lblNewCancelTicket.setForeground(new Color(239, 239, 239));
+		panel.add(lblNewCancelTicket);
+		lblNewCancelTicket.setFont(new Font("Tahoma", Font.BOLD, 25));
+		
+		JLabel lblNewLabel = new JLabel("Made by Pollos Hermanos™");
+		lblNewLabel.setForeground(new Color(239, 239, 239));
+		lblNewLabel.setBackground(new Color(10, 25, 49));
+		lblNewLabel.setBounds(220, 328, 165, 16);
+		contentPane.add(lblNewLabel);
 	}
-
 }

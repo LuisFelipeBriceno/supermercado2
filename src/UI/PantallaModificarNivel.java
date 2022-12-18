@@ -18,6 +18,7 @@ import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.Color;
 
 public class PantallaModificarNivel extends JFrame {
 
@@ -44,6 +45,7 @@ public class PantallaModificarNivel extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 587, 394);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(10, 25, 49));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -54,15 +56,21 @@ public class PantallaModificarNivel extends JFrame {
 		for (Usuario usuarios : usuario) {
 			UsuariosMostrar[usuario.indexOf(usuarios)] = usuarios.getNombre();}
 		JComboBox comboBoxUsuario = new JComboBox(UsuariosMostrar);
-		comboBoxUsuario.setBounds(140, 75, 134, 22);
+		comboBoxUsuario.setFont(new Font("Verdana", Font.PLAIN, 11));
+		comboBoxUsuario.setBackground(new Color(239, 239, 239));
+		comboBoxUsuario.setBounds(108, 123, 352, 22);
 		contentPane.add(comboBoxUsuario);
 		
 		textFieldnivel = new JTextField();
-		textFieldnivel.setBounds(140, 121, 134, 20);
+		textFieldnivel.setBackground(new Color(239, 239, 239));
+		textFieldnivel.setFont(new Font("Verdana", Font.PLAIN, 11));
+		textFieldnivel.setBounds(108, 199, 352, 20);
 		contentPane.add(textFieldnivel);
 		textFieldnivel.setColumns(10);
 		
 		JButton buttonModificar = new JButton("Modificar");
+		buttonModificar.setForeground(new Color(239, 239, 239));
+		buttonModificar.setBackground(new Color(24, 90, 219));
 		buttonModificar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				LinkedList<Usuario> usuario = listadousuario.LlenarListaUsuario();
@@ -94,17 +102,37 @@ public class PantallaModificarNivel extends JFrame {
 				}
 			}
 		});
-		buttonModificar.setBounds(165, 183, 89, 23);
+		buttonModificar.setBounds(205, 253, 179, 36);
 		contentPane.add(buttonModificar);
 		
-		JLabel lblNewLabel = new JLabel("Modificar Nivel de Permiso");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 22));
-		lblNewLabel.setBounds(66, 11, 335, 57);
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("Ingrese nuevo nivel");
-		lblNewLabel_1.setBounds(140, 108, 114, 14);
+		JLabel lblNewLabel_1 = new JLabel("Ingrese nuevo nivel: ");
+		lblNewLabel_1.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblNewLabel_1.setForeground(new Color(239, 239, 239));
+		lblNewLabel_1.setBounds(108, 172, 134, 14);
 		contentPane.add(lblNewLabel_1);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(24, 90, 219));
+		panel.setBounds(0, 0, 571, 47);
+		contentPane.add(panel);
+		
+		JLabel lblNewLabel = new JLabel("Modificar Nivel de Permiso");
+		lblNewLabel.setForeground(new Color(239, 239, 239));
+		panel.add(lblNewLabel);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 22));
+		
+		JLabel lblNewLabel_2 = new JLabel("Seleccione un usuario: ");
+		lblNewLabel_2.setFont(new Font("Verdana", Font.PLAIN, 12));
+		lblNewLabel_2.setForeground(new Color(239, 239, 239));
+		lblNewLabel_2.setBounds(108, 97, 160, 14);
+		contentPane.add(lblNewLabel_2);
+		
+		JLabel lblNewLabel_3 = new JLabel("Made by Pollos Hermanos™");
+		lblNewLabel_3.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblNewLabel_3.setForeground(new Color(239, 239, 239));
+		lblNewLabel_3.setBackground(new Color(239, 239, 239));
+		lblNewLabel_3.setBounds(224, 328, 160, 16);
+		contentPane.add(lblNewLabel_3);
 		
 
 	}

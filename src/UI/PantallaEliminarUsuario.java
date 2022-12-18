@@ -18,6 +18,7 @@ import java.awt.event.ActionListener;
 import java.util.LinkedList;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
+import java.awt.Color;
 
 public class PantallaEliminarUsuario extends JFrame {
 
@@ -44,15 +45,11 @@ public class PantallaEliminarUsuario extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 587, 394);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(10, 25, 49));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JLabel lblNewLabel = new JLabel("Seleccione Usuario a Borrar");
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 21));
-		lblNewLabel.setBounds(69, 30, 365, 65);
-		contentPane.add(lblNewLabel);
 		
 		ListadoUsuario listadousuario = new ListadoUsuario();
 		LinkedList<Usuario> usuario = listadousuario.LlenarListaUsuario();
@@ -60,10 +57,13 @@ public class PantallaEliminarUsuario extends JFrame {
 		for (Usuario usuarios : usuario) {
 			UsuariosMostrar[usuario.indexOf(usuarios)] = usuarios.getNombre();}
 		JComboBox comboBoxusuario = new JComboBox(UsuariosMostrar);
-		comboBoxusuario.setBounds(127, 113, 163, 22);
+		comboBoxusuario.setBackground(new Color(239, 239, 239));
+		comboBoxusuario.setBounds(123, 151, 304, 22);
 		contentPane.add(comboBoxusuario);
 		
 		JButton btnNewButton = new JButton("Eliminar");
+		btnNewButton.setForeground(new Color(239, 239, 239));
+		btnNewButton.setBackground(new Color(24, 90, 219));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -82,8 +82,29 @@ public class PantallaEliminarUsuario extends JFrame {
 				}
 			}
 		});
-		btnNewButton.setBounds(163, 204, 89, 23);
+		btnNewButton.setBounds(197, 221, 195, 35);
 		contentPane.add(btnNewButton);
+		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(24, 90, 219));
+		panel.setBounds(0, 0, 571, 46);
+		contentPane.add(panel);
+		
+		JLabel lblNewLabel = new JLabel("Eliminar usuario");
+		lblNewLabel.setForeground(new Color(239, 239, 239));
+		panel.add(lblNewLabel);
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 21));
+		
+		JLabel lblNewLabel_1 = new JLabel("- Seleccione el usuario a eliminar: ");
+		lblNewLabel_1.setFont(new Font("Verdana", Font.BOLD, 12));
+		lblNewLabel_1.setForeground(new Color(239, 239, 239));
+		lblNewLabel_1.setBounds(113, 121, 243, 16);
+		contentPane.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_2 = new JLabel("Made by Pollos Hermanos™");
+		lblNewLabel_2.setForeground(new Color(239, 239, 239));
+		lblNewLabel_2.setBounds(215, 328, 158, 16);
+		contentPane.add(lblNewLabel_2);
 		
 
 	}

@@ -15,6 +15,9 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JScrollPane;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
 
 public class TablaProducto extends JFrame {
 
@@ -22,6 +25,9 @@ public class TablaProducto extends JFrame {
 	private List<Producto> productos = listadoproducto.MostrarProductos();
 	private JPanel contentPane;
 	private JTable table;
+	private JPanel panel;
+	private JLabel lblNewLabel;
+	private JLabel lblNewLabel_1;
 
 	/**
 	 * Launch the application.
@@ -43,27 +49,45 @@ public class TablaProducto extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 587, 394);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(10, 25, 49));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		JButton btnNewButtonvolver = new JButton("Volver");
+		btnNewButtonvolver.setForeground(new Color(239, 239, 239));
+		btnNewButtonvolver.setBackground(new Color(24, 90, 219));
 		btnNewButtonvolver.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				PantallaVentas pantallaventas = new PantallaVentas();
 				pantallaventas.run();
 			}
 		});
-		btnNewButtonvolver.setBounds(215, 283, 89, 23);
+		btnNewButtonvolver.setBounds(197, 268, 182, 37);
 		contentPane.add(btnNewButtonvolver);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(29, 33, 458, 239);
+		scrollPane.setBounds(38, 81, 492, 165);
 		contentPane.add(scrollPane);
 		
 		table = new JTable();
 		scrollPane.setViewportView(table);
+		
+		panel = new JPanel();
+		panel.setBackground(new Color(24, 90, 219));
+		panel.setBounds(0, 0, 571, 50);
+		contentPane.add(panel);
+		
+		lblNewLabel = new JLabel("Tabla de productos");
+		lblNewLabel.setForeground(new Color(239, 239, 239));
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		panel.add(lblNewLabel);
+		
+		lblNewLabel_1 = new JLabel("Made by Pollos Hermanos™");
+		lblNewLabel_1.setForeground(new Color(239, 239, 239));
+		lblNewLabel_1.setBounds(213, 328, 161, 16);
+		contentPane.add(lblNewLabel_1);
 	}
 	
 	 public void MostrarProducto(){

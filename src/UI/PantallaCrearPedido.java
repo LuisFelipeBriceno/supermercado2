@@ -22,6 +22,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+import java.awt.Color;
 
 public class PantallaCrearPedido extends JFrame {
 
@@ -50,6 +51,7 @@ public class PantallaCrearPedido extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 587, 394);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(10, 25, 49));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -62,7 +64,8 @@ public class PantallaCrearPedido extends JFrame {
 			mostrarproductos[productos.indexOf(producto1)] =producto1.getNombre() ;
 		}
 		JComboBox comboBoxProducto = new JComboBox(mostrarproductos);
-		comboBoxProducto.setBounds(33, 155, 209, 22);
+		comboBoxProducto.setBackground(new Color(239, 239, 239));
+		comboBoxProducto.setBounds(33, 180, 408, 22);
 		contentPane.add(comboBoxProducto);
 		
 		ListadoUsuario listadousuario = new ListadoUsuario();
@@ -73,10 +76,13 @@ public class PantallaCrearPedido extends JFrame {
 			UsuariosMostrar[usuario1.indexOf(usuarios)] = usuarios.getNombre();
 		}
 		JComboBox comboBoxUsuario = new JComboBox(UsuariosMostrar);
-		comboBoxUsuario.setBounds(33, 117, 209, 22);
+		comboBoxUsuario.setBackground(new Color(239, 239, 239));
+		comboBoxUsuario.setBounds(33, 133, 408, 22);
 		contentPane.add(comboBoxUsuario);
 		
 		JButton btnNewButtonCrear = new JButton("Crear");
+		btnNewButtonCrear.setForeground(new Color(239, 239, 239));
+		btnNewButtonCrear.setBackground(new Color(24, 90, 219));
 		btnNewButtonCrear.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				ListadoProducto listadoproducto = new ListadoProducto();
@@ -118,39 +124,56 @@ public class PantallaCrearPedido extends JFrame {
 				pantallaventas.run();
 			}
 		});
-		btnNewButtonCrear.setBounds(33, 227, 89, 23);
+		btnNewButtonCrear.setBounds(202, 270, 175, 33);
 		contentPane.add(btnNewButtonCrear);
 		
 		textFieldCantidad = new JTextField();
-		textFieldCantidad.setBounds(33, 196, 209, 20);
+		textFieldCantidad.setBackground(new Color(239, 239, 239));
+		textFieldCantidad.setBounds(33, 228, 408, 20);
 		contentPane.add(textFieldCantidad);
 		textFieldCantidad.setColumns(10);
 		
 		
 		JLabel lblNewLabelCantidad = new JLabel("Cantidad");
-		lblNewLabelCantidad.setBounds(33, 182, 209, 14);
+		lblNewLabelCantidad.setForeground(new Color(239, 239, 239));
+		lblNewLabelCantidad.setBounds(33, 213, 209, 14);
 		contentPane.add(lblNewLabelCantidad);
 		
 		textFieldticket = new JTextField();
+		textFieldticket.setBackground(new Color(239, 239, 239));
 		textFieldticket.setColumns(10);
-		textFieldticket.setBounds(33, 79, 209, 20);
+		textFieldticket.setBounds(33, 89, 408, 20);
 		contentPane.add(textFieldticket);
 		
 		JLabel lblNewLabelticker = new JLabel("Nro Ticket");
-		lblNewLabelticker.setBounds(33, 62, 209, 14);
+		lblNewLabelticker.setForeground(new Color(239, 239, 239));
+		lblNewLabelticker.setBounds(33, 74, 209, 14);
 		contentPane.add(lblNewLabelticker);
 		
 		JLabel lblUsuario = new JLabel("Usuario");
-		lblUsuario.setBounds(33, 102, 209, 14);
+		lblUsuario.setForeground(new Color(239, 239, 239));
+		lblUsuario.setBounds(33, 120, 209, 14);
 		contentPane.add(lblUsuario);
 		
 		JLabel lblProducto = new JLabel("Producto");
-		lblProducto.setBounds(33, 140, 209, 14);
+		lblProducto.setForeground(new Color(239, 239, 239));
+		lblProducto.setBounds(33, 166, 209, 14);
 		contentPane.add(lblProducto);
 		
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(24, 90, 219));
+		panel.setBounds(0, 0, 571, 49);
+		contentPane.add(panel);
+		
 		JLabel lblNewLabel = new JLabel("Seleccione el producto");
+		lblNewLabel.setForeground(new Color(239, 239, 239));
+		panel.add(lblNewLabel);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
-		lblNewLabel.setBounds(80, 11, 301, 30);
-		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("Made by Pollos Hermanos™");
+		lblNewLabel_1.setForeground(new Color(239, 239, 239));
+		lblNewLabel_1.setBackground(new Color(10, 25, 49));
+		lblNewLabel_1.setBounds(218, 328, 165, 16);
+		contentPane.add(lblNewLabel_1);
 	}
 }
